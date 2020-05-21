@@ -22,17 +22,6 @@ docker build -t jdominguez198/concourse-github-sonarcloud .
 
 Here is an example of a Concourse [job](http://concourse.ci/concepts.html) that uses ```jdominguez198/concourse-github-sonarcloud``` image to run the sonarcloud analysis tool.
 
-
-  - name: api-base-pull-request
-    type: pull-request
-    check_every: 20m
-    icon: github-circle
-    source:
-      repository: onesdata/rocket-storefront
-      access_token: ((rocket_storefront_github_access_token))
-      base_branch: "master"
-
-
 ```yaml
 resources:
 - name: pullrequest
