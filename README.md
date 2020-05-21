@@ -49,7 +49,7 @@ jobs:
         image_resource:
           type: docker-image
           source:
-            repository: jdominguez198/concourse-bitbucket-sonarcloud
+            repository: jdominguez198/concourse-github-sonarcloud
         inputs:
           - name: pullrequest
         run:
@@ -61,6 +61,7 @@ jobs:
           REPOSITORY_SOURCES: "src/"
           REPOSITORY_JS_LCOV: "test/unit/coverage/lcov.info" # Optional
           REPOSITORY_CPD_EXCLUSIONS: "test/**/a*.js" # Optional
+          REPOSITORY_SSH_KEY: ((repository_private_key))
           SONAR_PROJECT_KEY: ((sonar_project_key))
           SONAR_PROJECT_NAME: ((sonar_project_name))
           SONAR_PROJECT_ORGANIZATION: ((sonar_project_organization))
