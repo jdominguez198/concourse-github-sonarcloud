@@ -31,12 +31,12 @@ call_sonarcloud_docker_run () {
       "-Dsonar.pullrequest.branch=${PR_BRANCH}"
       "-Dsonar.pullrequest.base=${PR_BASE}"
     )
-    if [[ ! -z "$REPOSITORY_JS_LCOV"]]; then
+    if [[ ! -z "$REPOSITORY_JS_LCOV" ]]; then
       SONAR_COMMAND+=(
         "-Dsonar.javascript.lcov.reportPaths=${REPOSITORY_JS_LCOV}"
       )
     fi
-    if [[ ! -z "$REPOSITORY_CPD_EXCLUSIONS"]]; then
+    if [[ ! -z "$REPOSITORY_CPD_EXCLUSIONS" ]]; then
       SONAR_COMMAND+=(
         "-Dsonar.cpd.exclusions=${REPOSITORY_CPD_EXCLUSIONS}"
       )
