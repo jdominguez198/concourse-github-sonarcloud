@@ -13,7 +13,8 @@
 call_sonarcloud_docker_run () {
   SONAR_COMMAND=(
     "docker run -ti -v $(pwd)/${INPUT_FOLDER}:/var/www"
-    "newtmitch/sonar-scanner:alpine"
+    "sonarsource/sonar-scanner-cli"
+    "sonar-scanner"
     "-Dsonar.projectBaseDir=/var/www"
     "-Dsonar.projectKey=${SONAR_PROJECT_KEY}"
     "-Dsonar.projectName=${SONAR_PROJECT_NAME}"
